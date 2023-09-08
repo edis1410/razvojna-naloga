@@ -1,0 +1,37 @@
+/* Toolbar container */
+div {
+    background-color: #1e88e5; /* Background color for the toolbar */
+    color: #ffffff; /* Text color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle elevation effect */
+  }
+  
+  /* Title styling */
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+  
+  /* Navigation links */
+  nav {
+    display: flex;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #ffffff; /* Link text color */
+    margin-left: 20px; /* Spacing between navigation links */
+    font-weight: 500; /* Medium font weight */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+  }
+  
+  a:hover {
+    color: #ffab40; /* Color change on hover */
+  }
+  

@@ -1,6 +1,10 @@
 <div *ngIf="responseData">
-    <h2>Data from API:</h2>
-    {{ responseData }}
+    <h2>Data from API(First and last names):</h2>
+    <div class="grid-container">
+      <div class="grid-item" *ngFor="let item of responseData">
+        <p>{{ item.FirstName }} {{ item.LastName }}</p>
+      </div>
+    </div>
   </div>
   <div *ngIf="error">
     <p>Error: {{ error }}</p>
