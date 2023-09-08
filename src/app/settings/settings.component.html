@@ -1,27 +1,23 @@
 <form [formGroup]="settingsForm" (ngSubmit)="add()">
-    <label for="client-id">Client ID*: </label>
-    <input
-      onClick="select()"
-      id="client-id"
-      type="text"
-      formControlName="id"
-      required
-      placeholder="ID"
-    />
-    <label for="client-secret">Client secret*: </label>
-    <input
-      onClick="select()"
-      id="client-secret"
-      type="text"
-      formControlName="secret"
-      required
-      placeholder="Secret"
-    />
-    <button
-      id="submit"
-      type="submit"
-      [disabled]="!settingsForm.valid"
-    >
-      Save settings
-    </button>
-  </form>
+  <label for="client-id">Client ID*: </label>
+  <input
+    onClick="select()"
+    id="client-id"
+    type="text"
+    formControlName="id"
+    required
+    placeholder="ID"
+  />
+  <label for="client-secret">Client secret*: </label>
+  <input
+    onClick="select()"
+    id="client-secret"
+    type="text"
+    formControlName="secret"
+    required
+    placeholder="Secret"
+  />
+  <button id="submit" type="submit" [disabled]="!settingsForm.valid">
+    Save settings
+  </button>
+</form>
