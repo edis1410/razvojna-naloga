@@ -39,3 +39,19 @@ input[type="text"] {
       box-shadow: 0 0 5px rgba(30, 136, 229, 0.5);
     }
   }
+
+  button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    float: right;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

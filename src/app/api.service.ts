@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
+import { User } from 'src/User';
 
 @Injectable({
   providedIn: 'root',
@@ -15,8 +16,23 @@ export class ApiService {
       .set('Authorization', `Bearer ${accessToken}`)
       .set('Content-Type', 'application/json');
 
-    const apiUrl = `${this.apiUrl}/api/v1/Users`;
+    const url = `${this.apiUrl}/api/v1/Users`;
 
-    return this.http.get(apiUrl, { headers });
+    return this.http.get(url, { headers });
+  }
+
+  setUser(userData: User): Observable<any> {
+    const url = `${this.apiUrl}/api/v1/Users`;
+    const headers = new HttpHeaders()
+      .set('accept', `application/json`)
+      .set('Content-Type', 'application/json');
+
+    console.log(userData);
+    return this.http.post(this.apiUrl, JSON.stringify(userData), { headers }).pipe(
+      catchError((error: any) => {
+        console.error('An error occurred:', error);
+        return throwError(error);
+      })
+    );
   }
 }

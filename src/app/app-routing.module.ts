@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'settings',  loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule) },
   { path: 'users',  loadChildren: () => import('./users/users.module').then(m => m.UsersModule) },
   { path: 'absences',  loadChildren: () => import('./absences/absences.module').then(m => m.AbsencesModule) },
+  { path: 'add',  loadChildren: () => import('./add-user/add-user.module').then(m => m.AddUserModule) },
 ];
 
 @NgModule({

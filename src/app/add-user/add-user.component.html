@@ -1,0 +1,15 @@
+<form [formGroup]="addUserForm" (ngSubmit)="add()">
+  <div>
+    <label for="name">Name*</label>
+    <input type="text" id="name" formControlName="FirstName" required placeholder="Janez"/>
+  </div>
+  <div>
+    <label for="surname">Surname*</label>
+    <input type="text" id="surname" formControlName="LastName" required placeholder="Novak"/>
+  </div>
+  <div>
+    <label for="email">Email*</label>
+    <input type="email" id="email" formControlName="Email" required placeholder="janeznovak@email.com"/>
+  </div>
+  <button type="submit" [disabled]="!addUserForm.valid">Add User</button>
+</form>
