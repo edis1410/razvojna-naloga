@@ -1,7 +1,8 @@
 <div class="wrap" *ngIf="responseData">
     <h2>Data from API (First and last names):</h2>
     <input type="text" [(ngModel)]="searchTerm" (input)="filterData()" placeholder="Search by name">
-    <button routerLink="/add">Add User</button>
+    <button routerLink="/add-user">Add User</button>
+    <button routerLink="/add-absence">Add Absence</button>
     <div class="grid-container">
       <div class="grid-item" *ngFor="let item of filteredData">
         <p>{{ item.FirstName }} {{ item.LastName }}</p>

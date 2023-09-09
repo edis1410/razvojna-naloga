@@ -45,5 +45,19 @@ export class ApiService {
 
     return this.http.get<Absence[]>(url, {headers});
   }
+  setAbsence(userData: Absence, accessToken: string): Observable<any> {
+    const url = `${this.apiUrl}/api/v1/Users`;
+    const headers = new HttpHeaders()
+      .set('Authorization', `Bearer ${accessToken}`)
+      .set('Content-Type', 'application/json');
+
+    console.log(userData);
+    return this.http.post(this.apiUrl, JSON.stringify(userData), { headers }).pipe(
+      catchError((error: any) => {
+        console.error('An error occurred:', error);
+        return throwError(error);
+      })
+    );
+  }
 
 }

@@ -1,0 +1,21 @@
+<form [formGroup]="addAbsenceForm" (ngSubmit)="add()">
+    <div>
+      <label for="userId">User ID*</label>
+      <input type="text" id="userId" formControlName="UserId" required placeholder="123"/>
+    </div>
+    <div>
+      <label for="comment">Comment*</label>
+      <input type="text" id="comment" formControlName="Comment" required placeholder="Holiday"/>
+    </div>
+    <div>
+      <label for="from">From*</label>
+      <input type="date" id="from" formControlName="PartialTimeFrom" required/>
+    </div>
+    <div>
+        <label for="to">To*</label>
+        <input type="date" id="to" formControlName="PartialTimeTo" required/>
+      </div>
+    <button type="submit" [disabled]="!addAbsenceForm.valid">Add Absence</button>
+    <button type="button" routerLink="/users">Back</button>
+  </form>
+  
