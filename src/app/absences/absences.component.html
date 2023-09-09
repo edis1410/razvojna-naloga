@@ -1,1 +1,13 @@
-<p>absences works!</p>
+<div class="wrap">
+  <h2>Absences List</h2>
+  <button (click)="refreshList()">Refresh</button>
+  <input type="date" class="date-picker" id="datePicker" [(ngModel)]="selectedDate" (change)="onDateSelected()"/>
+  <div class="grid-container">
+    <div class="grid-item" *ngFor="let absence of absences">
+      <p>User: {{ absence.FirstName }} {{ absence.LastName }}</p>
+      <p>From: {{ absence.PartialTimeFrom | date }}</p>
+      <p>To: {{ absence.PartialTimeTo | date }}</p>
+      <p>Comment: {{absence.AbsenceDefinitionName}}</p>
+    </div>
+  </div>
+</div>

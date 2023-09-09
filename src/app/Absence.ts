@@ -1,0 +1,30 @@
+export interface Absence {
+  Id: string;
+  UserId: string;
+  GroupId: string;
+  FirstName: string;
+  MiddleName: string | null;
+  LastName: string;
+  Timestamp: string;
+  AbsenceDefinitionId: string;
+  AbsenceDefinitionName: string;
+  InsertedOn: string;
+  ModifiedOn: string;
+  Origin: number;
+  OriginDisplayName: string;
+  Comment: string;
+  IsAuthentic: boolean;
+  IconId: string;
+  IconColor: string ;
+  IsCalculated: boolean;
+  Status: number;
+  ApprovalRequest: any ;
+  PartialTimeFrom: string;
+  PartialTimeTo: string;
+  PartialTimeDuration: number;
+  IsPartial: boolean;
+  OverrideHolidayAbsence: boolean;
+  IsModified: boolean;
+  ModifiedByUser: any;
+  AbsenceDefinitionType: number;
+}

@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
-import { User } from 'src/User';
+import { User } from 'src/app/User';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-add-user',
@@ -13,7 +14,8 @@ export class AddUserComponent {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private api: ApiService
+    private api: ApiService,
+    private authService: AuthService
   ) {}
 
   public addUserForm = this.fb.group({
@@ -25,8 +27,17 @@ export class AddUserComponent {
   public add(): void {
     if (this.addUserForm.valid) {
       const settingsFormData = this.addUserForm.getRawValue();
-      this.api.setUser(settingsFormData as User);
-      // this.router.navigate(['/users']);
+      this.authService.getAccessToken().subscribe((accessToken) => {
+        this.api.setUser(settingsFormData as User, accessToken).subscribe(
+          (response) => {
+            console.log(response);
+          },
+          (error) => {
+            console.error(error);
+          }
+        );
+        // this.router.navigate(['/users']);
+      });
     } else {
       console.log('Handle errors');
     }

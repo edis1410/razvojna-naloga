@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, throwError } from 'rxjs';
-import { User } from 'src/User';
+import { User } from 'src/app/User';
+import { Absence } from './Absence';
 
 @Injectable({
   providedIn: 'root',
@@ -21,10 +22,10 @@ export class ApiService {
     return this.http.get(url, { headers });
   }
 
-  setUser(userData: User): Observable<any> {
+  setUser(userData: User, accessToken: string): Observable<any> {
     const url = `${this.apiUrl}/api/v1/Users`;
     const headers = new HttpHeaders()
-      .set('accept', `application/json`)
+      .set('Authorization', `Bearer ${accessToken}`)
       .set('Content-Type', 'application/json');
 
     console.log(userData);
@@ -35,4 +36,14 @@ export class ApiService {
       })
     );
   }
+
+  getAbsences(accessToken: string): Observable<Absence[]> {
+    const url = `${this.apiUrl}/api/v1/Absences`;
+    const headers = new HttpHeaders()
+    .set('Authorization', `Bearer ${accessToken}`)
+    .set('Content-Type', 'application/json');
+
+    return this.http.get<Absence[]>(url, {headers});
+  }
+
 }
