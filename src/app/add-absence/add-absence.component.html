@@ -9,11 +9,11 @@
     </div>
     <div>
       <label for="from">From*</label>
-      <input type="date" id="from" formControlName="PartialTimeFrom" required/>
+      <input type="date" class="date-picker" id="from" formControlName="PartialTimeFrom" required/>
     </div>
     <div>
         <label for="to">To*</label>
-        <input type="date" id="to" formControlName="PartialTimeTo" required/>
+        <input type="date" class="date-picker" id="to" formControlName="PartialTimeTo" required/>
       </div>
     <button type="submit" [disabled]="!addAbsenceForm.valid">Add Absence</button>
     <button type="button" routerLink="/users">Back</button>
