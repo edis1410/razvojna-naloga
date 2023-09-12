@@ -75,6 +75,7 @@ select {
   color: #333;
   cursor: pointer;
   margin-bottom: 10px;
+  margin-left: 10px;
 }
 
 select:focus {
