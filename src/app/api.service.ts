@@ -61,4 +61,14 @@ export class ApiService {
         })
       );
   }
+
+  getAbsenceDefinitions(accessToken: string): Observable<any> {
+    const headers = new HttpHeaders()
+      .set('Authorization', `Bearer ${accessToken}`)
+      .set('Content-Type', 'application/json');
+
+    const url = `${this.apiUrl}/api/v1/AbsenceDefinitions`;
+
+    return this.http.get(url, { headers });
+  }
 }
