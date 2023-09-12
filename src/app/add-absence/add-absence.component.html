@@ -1,12 +1,11 @@
 <form [formGroup]="addAbsenceForm" (ngSubmit)="add()">
-    <div>
-      <label for="userId">User ID*</label>
-      <input type="text" id="userId" formControlName="UserId" required placeholder="123"/>
-    </div>
-    <div>
-      <label for="AbsenceDefinitionName">Type*</label>
-      <input type="text" id="AbsenceDefinitionName" formControlName="AbsenceDefinitionName" required placeholder="Holiday"/>
-    </div>
+    <h2>Add absence for user ID:</h2>
+    <h2>{{id}}</h2>
+    <label for="type">Type of absence*</label>
+      <select name="type" formControlName="Id">
+        <option *ngFor="let item of responseData" value="{{item.Id}}">{{item.Name}}</option>
+      </select>
+    
     <div>
       <label for="from">From*</label>
       <input type="date" class="date-picker" id="from" formControlName="PartialTimeFrom" required/>

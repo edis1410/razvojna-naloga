@@ -20,8 +20,7 @@ form {
     margin-bottom: 5px;
   }
   
-  input[type="text"],
-  input[type="email"] {
+  input[type="text"]{
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -64,4 +63,22 @@ form {
 .date-picker:focus {
   border-color: #007bff; 
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); 
+}
+select {
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  width: 100%;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
 }

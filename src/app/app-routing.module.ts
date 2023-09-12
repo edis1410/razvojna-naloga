@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: 'users',  loadChildren: () => import('./users/users.module').then(m => m.UsersModule) },
   { path: 'absences',  loadChildren: () => import('./absences/absences.module').then(m => m.AbsencesModule) },
   { path: 'add-user',  loadChildren: () => import('./add-user/add-user.module').then(m => m.AddUserModule) },
-  { path: 'add-absence',  loadChildren: () => import('./add-absence/add-absence.module').then(m => m.AddAbsenceModule) },
+  { path: 'add-absence/:id',  loadChildren: () => import('./add-absence/add-absence.module').then(m => m.AddAbsenceModule) },
 ];
 
 @NgModule({

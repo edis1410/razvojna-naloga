@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, throwError } from 'rxjs';
 import { User } from 'src/app/User';
 import { Absence } from './Absence';
+import { PostAbsence } from './Post_Absence';
 
 @Injectable({
   providedIn: 'root',
@@ -45,8 +46,8 @@ export class ApiService {
 
     return this.http.get<Absence[]>(url, { headers });
   }
-  setAbsence(userData: Absence, accessToken: string): Observable<any> {
-    const url = `${this.apiUrl}/api/v1/Users`;
+  setAbsence(userData: PostAbsence, accessToken: string): Observable<any> {
+    const url = `${this.apiUrl}/api/v1/Absences`;
     const headers = new HttpHeaders()
       .set('Authorization', `Bearer ${accessToken}`)
       .set('Content-Type', 'application/json');
